@@ -1,0 +1,815 @@
+
+
+body {
+    font-family: Cormorant Infant, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background-color: #000;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: white;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    margin-top: -2rem;
+}
+
+.logo {
+    font-family: 'Cormorant Infant', sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+nav a {
+    font-family: 'Cormorant Infant', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    margin: 3.5rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFF09F;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: white;
+    size: 1.35em;
+    margin-left: -1rem;
+}
+
+/* Стили для мобильного меню */
+.mobile-menu {
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 20;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    /* Вертикальное размещение ссылок */
+    align-items: flex-start;
+    /* Выравнивание по левому краю */
+    margin-top: 2rem;
+    /* Отступ сверху */
+}
+
+.mobile-nav-links li {
+    margin: 1rem 0;
+    /* Отступы между ссылками */
+}
+
+.mobile-nav-links a {
+    font-size: 2em;
+    /* Увеличенный размер шрифта для ссылок */
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    color: #FFF09F;
+    /* Изменение цвета при наведении */
+}
+
+button {
+    background-color: #B3C789;
+    color: black;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.25em;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8A9F5D;
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    /* Скрыть иконку гамбургера по умолчанию */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Скрыть навигацию на мобильных */
+    }
+
+    .hamburger {
+        display: block;
+        /* Показываем иконку гамбургера */
+    }
+
+    header {
+        flex-direction: row;
+        /* Оставляем горизонтальное выравнивание */
+    }
+
+    main h1 {
+        font-size: 4em; /* Уменьшаем размер заголовка */
+        margin-bottom: 3rem; /* Уменьшаем нижний отступ */
+    }
+
+    main p {
+        font-size: 1em; /* Уменьшаем размер текста */
+        margin-top: -3rem; /* Обновление отступов */
+        margin-bottom: 2rem; /* Уменьшаем нижний отступ */
+    }
+
+    button {
+        padding: 0.9rem 0.9rem; /* Уменьшаем отступы кнопки */
+        font-size: 1em; /* Уменьшаем размер шрифта кнопки */
+    }
+}
+
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 3em; /* Дальнейшее уменьшение для очень маленьких экранов */
+    }
+
+    .mobile-nav-links a {
+        font-size: 1.5em; /* Уменьшение размера ссылок для маленьких экранов */
+    }
+}
+
+/*tour details info*/
+.tour-details {
+    padding: 2rem 0;
+    background-color: #1A1A1A;
+    color: white;
+}
+
+.tour-details .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.tour-details h1 {
+    margin: 80px 0 0 0;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Infant', serif;
+    text-align: center;
+}
+
+.tour-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tour-images {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+}
+
+.tour-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.tour-info {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+}
+
+.tour-info h2 {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Infant', serif;
+    color: #B3C789;
+    border-bottom: 1px solid #B3C789;
+    padding-bottom: 0.5rem;
+}
+
+.tour-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.tour-info strong {
+    font-weight: bold;
+}
+
+.tour-info .tour-description {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.tour-duration,
+.tour-price,
+.tour-guides {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.tour-info ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+    /* Увеличиваем отступ снизу для списка */
+}
+
+.tour-info li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Добавляем отступы между секциями */
+.tour-section {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design (для телефонов) */
+@media (max-width: 768px) {
+
+    /* Tablets */
+    .tour-details h1 {
+        font-size: 2rem;
+    }
+
+    .tour-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tour-images {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .tour-info {
+        text-align: center;
+    }
+
+    .tour-info h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Phones */
+    .tour-details h1 {
+        font-size: 1.8rem;
+    }
+
+    .tour-info p {
+        font-size: 1rem;
+    }
+
+    .tour-info h2 {
+        font-size: 1.4rem;
+    }
+}
+
+.team {
+    background-color: #1A1A1A;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.team .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Infant', serif;
+    color: #ddd;
+    margin: 0 auto;
+}
+
+.team .team-description {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    font-family: 'Manrope', sans-serif;
+}
+
+.team .team-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+
+}
+
+.team .team-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Для плавной прокрутки на iOS */
+    padding-bottom: 1rem;
+    margin: 0 -20px;
+    /*  Отрицательный margin для корректного отображения */
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+    /* для выравнивания */
+}
+
+.team .team-member {
+    flex: 0 0 300px;
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    position: relative;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    /* Для прокрутки по элементам */
+}
+
+.team .team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #B3C789;
+    /* Цвет рамки */
+    border-radius: 10px;
+    box-sizing: border-box;
+    pointer-events: none;
+    /* Чтобы не мешать кликам */
+}
+
+.team .team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team .team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    display: block;
+    /* Убираем отступы снизу у inline-элементов */
+    transition: transform 0.5s ease-in-out;
+}
+
+.team .team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team .team-member-info {
+    text-align: left;
+}
+
+.team .team-member h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-family: 'Cormorant Infant', serif;
+    color: #ddd;
+}
+
+.team .team-member p {
+    font-size: 0.9rem;
+    color: #ddd;
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 0.3rem;
+}
+
+.team .team-member-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    /* Добавляем отступ снизу */
+}
+
+.team .team-member-position {
+    font-style: italic;
+}
+
+/* Скрываем полосу прокрутки для team-carousel */
+.team .team-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.team-carousel-button,
+.team .team-carousel-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    /* Одинаковый размер */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: static;
+    /* Убрал position absolute */
+    transform: none;
+    padding: 0;
+}
+
+.team-carousel-button:hover,
+.team .team-carousel-button:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.team-carousel-button.prev,
+.team .team-carousel-button.prev {
+    margin-right: 3rem;
+    /* Увеличен отступ */
+}
+
+.team-carousel-button.next,
+.team .team-carousel-button.next {
+    margin-left: 3rem;
+    /* Увеличен отступ */
+}
+
+/* Адаптивные стили для планшетов и телефонов */
+@media (max-width: 768px) {
+    /* Для планшетов */
+    .team .team-carousel-wrapper {
+        padding: 0 1rem;
+        /* Уменьшаем отступы */
+    }
+
+    .team .team-member {
+        flex: 0 0 90%;
+        /* Карточки занимают больше ширины */
+        margin-right: 1rem;
+        /* Уменьшаем отступ между карточками */
+    }
+    
+}
+
+/* ========================= Стили для секции "Что включено" ========================= */
+.included-section {
+    background-color: #1A1A1A;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.included-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.included-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Расстояние между элементами */
+    margin-top: 80px;
+}
+
+.included-item {
+    width: 300px;
+    /* Ширина элемента */
+    background-color: #252525;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.included-item img {
+    width: 100%;
+    height: 200px;
+    /* Фиксированная высота для всех изображений */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.included-item h3 {
+    font-size: 1rem;
+    font-family: 'Cormorant Infant', serif;
+    color: #B3C789;
+    margin-bottom: 25px;
+
+}
+
+.included-item p {
+    font-size: 1rem;
+    font-family: 'Manrope', sans-serif;
+    color: #ddd;
+    text-align:  justify;
+    margin-top: 0;
+}
+
+/* ========================= Стили для секции "Связаться с нами" ========================= */
+.contact-page {
+    height: auto; /* Автоматическая высота */
+    min-height: 30vh; /* Минимальная высота секции */
+    background-image: none; /* Убираем фоновое изображение */
+    background-color: #1A1A1A; /* Добавляем цвет фона, как у других секций */
+    text-align: center;
+    padding: 2rem 0;
+    color: white;
+}
+
+.contact-page .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.contact-page h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Infant', serif;
+}
+
+.contact-page p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem; /* Увеличен отступ для красоты */
+    font-family: 'Manrope', sans-serif;
+}
+
+.contact-page .form-wrapper {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.contact-page .name-email-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+.contact-page input[type="text"],
+.contact-page input[type="email"] {
+    width: 48%;
+}
+
+.contact-page button {
+    background-color: #B3C789;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 1rem auto; /* Центрируем кнопку и добавляем отступ сверху и снизу */
+}
+
+.contact-page button:hover {
+    background-color: #8A9F5D;
+    color: white;
+}
+
+/* Адаптивный дизайн для маленьких экранов */
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 1rem 0;
+        min-height: auto;
+    }
+
+    .contact-page .name-email-row {
+        flex-direction: column;
+    }
+
+    .contact-page input[type="text"],
+    .contact-page input[type="email"] {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ========================= Стили для подвала ========================= */
+footer {
+    background-color: #1A1A1A;
+    color: #ddd;
+    padding: 2rem 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Равномерное распределение колонок */
+    align-items: space-evenly; /* Выравнивает элементы по верху */
+}
+
+.footer-column {
+    flex: 1 1 250px;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /*  Элементы в колонке по вертикали  */
+    align-items: flex-start; /*  Выравнивание текста по левому краю в колонках  */
+}
+
+/* Стили для лого */
+.footer-logo {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 1.5em;
+    color: #ddd;
+    text-decoration: none;
+    display: block; /* Чтобы занимал всю ширину */
+    margin-bottom: 0rem; /* Отступ от текста под лого */
+    margin-top: 1rem;
+}
+
+/* Стили для списка ссылок */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #B3C789; /* Цвет при наведении */
+}
+
+.footer-column.contact-info {
+    margin-top: 1rem; /* Увеличьте отступ сверху для всей секции контактов */
+}
+
+.footer-column.contact-info i {
+    margin-right: 0.5rem;
+    color: #B3C789;
+}
+
+/* Стили для социальных ссылок */
+.footer-column.social-links p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footer-column.social-links .social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.footer-column.social-links .social-icons a {
+    color: #ddd;
+    font-size: 1.35em;
+    margin: 0 0.75rem;
+    text-decoration: none;
+}
+
+.footer-column.social-links .social-icons a:hover {
+    color: #B3C789;
+}
+
+/* Стили для кнопки "Наверх" */
+.back-to-top-button {
+    position: fixed; /* Фиксированное положение */
+    bottom: 20px; /* Отступ снизу */
+    right: 20px; /* Отступ справа */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон (черный с прозрачностью 0.5) */
+    color: white; /* Цвет стрелки */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Круглая форма */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Чтобы быть поверх других элементов */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+.back-to-top-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Фон темнее при наведении */
+}
+
+.back-to-top-button i {
+    font-size: 1.5em; /* Размер стрелки */
+}
+
+/* Адаптивный дизайн для маленьких экранов */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+        font-size: 2em;
+    }
+
+    .footer-column.social-links .social-icons {
+        margin-top: 1rem;
+    }
+}
