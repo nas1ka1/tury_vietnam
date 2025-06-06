@@ -27,23 +27,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Функция для прокрутки к секции по id
+  function scrollToSection(targetId) {
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
-  document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+  // Обработка внутренних навигационных ссылок
+  document.querySelectorAll('header nav a').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
 
-        // Получаем целевой элемент для прокрутки
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+      // Проверяем, есть ли у ссылки хэш (например, index.html#tours)
+      const url = new URL(this.href, window.location.origin);
+      const hash = url.hash; // например, '#tours'
 
-        // Плавная прокрутка к целевому элементу
-        targetElement.scrollIntoView({
-            behavior: 'smooth'
-        });
+      if (hash) {
+        // Перенаправляем на главную страницу с хэшем
+        window.location.href = `index.html${hash}`;
+      } else {
+        // Если ссылка внутренняя, обрабатываем как обычно
+        const targetId = this.textContent.trim().toLowerCase();
+        switch (targetId) {
+          case 'компания':
+            scrollToSection('reasons');
+            break;
+          case 'туры':
+            scrollToSection('tours');
+            break;
+          case 'что включено':
+            scrollToSection('included-section');
+            break;
+          case 'отзывы': 
+            scrollToSection('comments-page');
+            break;
+        }
+      }
     });
-});
-
-
+  });
 
   // Обработка кнопок "Забронировать тур" и "Посмотреть туры"
   const bookTourButton = document.getElementById('bookTourButton');
@@ -240,3 +263,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+
+function goToTeamSection() {
+  window.location.href = "index.html#tours";
+  window.location.href = "index.html#reasons";
+  window.location.href = "index.html#included";
+  window.location.href = "index.html#comments";
+}
