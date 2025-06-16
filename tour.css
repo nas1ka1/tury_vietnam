@@ -1,4 +1,4 @@
-﻿body {
+body {
     font-family: Cormorant Infant, sans-serif;
     margin: 0;
     padding: 0;
@@ -136,8 +136,11 @@ button:hover {
         display: none;
     }
 
-    .hamburger {
+    .hamburger  {
         display: block;
+    }
+    .mobile-menu {
+        display: none; 
     }
 
     header {
@@ -165,6 +168,16 @@ button:hover {
     }
     .logo{
       margin-top: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    main h1 {
+        font-size: 3em; 
+    }
+
+    .mobile-nav-links a {
+        font-size: 1.5em; 
     }
 }
 
@@ -491,7 +504,12 @@ button:hover {
       margin-bottom: 2rem;
     }
     .team .team-member {
+        flex: 1 0 200px; 
         padding: 1rem; 
+        
+    }
+    .team .team-carousel-wrapper {
+        padding: 0 10px; 
     }
 
     .team .team-member h3 {
@@ -503,6 +521,7 @@ button:hover {
     .team .team-member p {
         font-size: 0.8rem; 
         line-height: 1.4;
+        margin-top: 0.8rem;
     }
 
     .team .team-member-description {
