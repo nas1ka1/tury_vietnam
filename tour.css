@@ -135,9 +135,10 @@ button:hover {
     .nav-links {
         display: none;
     }
-
     .hamburger  {
         display: block;
+        margin-top: 6rem;
+        margin-left: -10rem;
     }
     .mobile-menu {
         display: none; 
