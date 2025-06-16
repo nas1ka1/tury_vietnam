@@ -141,7 +141,7 @@ button:hover {
         margin-left: -10rem;
     }
     .mobile-menu {
-        display: none; 
+        display: flex; 
     }
 
     header {
@@ -169,16 +169,6 @@ button:hover {
     }
     .logo{
       margin-top: 1.3em;
-    }
-}
-
-@media (max-width: 480px) {
-    main h1 {
-        font-size: 3em; 
-    }
-
-    .mobile-nav-links a {
-        font-size: 1.5em; 
     }
 }
 
